@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="Layout" focusTraversable="true" stylesheets="@../css/page.css"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.lzj.autotestpc.controller.HomePageController">
+    <children>
+
+        <AnchorPane fx:id="title" layoutX="0.0" layoutY="0.0" prefHeight="50.0">
+            <children>
+                <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../imager/login_background.jpg"/>
+                    </image>
+                </ImageView>
+                <Label fx:id="welcome" layoutX="60.0" layoutY="15.0" prefHeight="15.0" text="欢迎登录自动化平台"/>
+                <Label fx:id="hide" layoutX="1000.0" layoutY="10.0" onMouseClicked="#hide" pickOnBounds="true"
+                       prefHeight="30.0" prefWidth="30.0" style="-fx-font-size: 20px;-fx-alignment: CENTER;" text="-"/>
+                <Label fx:id="exit" layoutX="1000.0" layoutY="8.0" onMouseClicked="#exit" pickOnBounds="true"
+                       prefHeight="30.0" prefWidth="30.0" style="-fx-font-size: 20px;-fx-alignment: CENTER;" text="×"/>
+            </children>
+
+        </AnchorPane>
+        <TreeView fx:id="treeView" layoutX="20" layoutY="80.0" opacity="0.63" prefHeight="350.0" prefWidth="200.0 ">
+
+        </TreeView>
+        <VBox fx:id="deviceList" layoutX="20.0" layoutY="450.0" prefHeight="260.0" prefWidth="200.0"
+              style="-fx-background-color: #95978e;">
+            <children>
+                <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="20"
+                      style="-fx-background-color: #95978e;">
+                    <children>
+                        <Label prefHeight="20.0" text="检查设备"/>
+                        <Label prefHeight="20.0" text="刷新设备"/>
+                        <Label prefHeight="20.0" text="断开连接"/>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #e1fffc;">
+                    <children>
+                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="100" text="设备名称"/>
+                        <Label prefHeight="20" prefWidth="1" style="-fx-background-color:  #000000;"/>
+                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="100" text="当前状态"/>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" style="-fx-background-color:  #e1fffc;">
+                    <children>
+                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="100" text="A26T"/>
+                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="100" text="在线"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <TabPane layoutX="240.0" layoutY="80.0" prefHeight="630.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="查询商品信息">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="630.0" prefWidth="1000.0">
+                            <children>
+                                <HBox alignment="CENTER" layoutY="0.0" prefHeight="30.0" prefWidth="1000.0"
+                                      style="-fx-background-color: #e1fffc">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="199.0" text="淘宝标题"/>
+                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="199.0" text="商品规格"/>
+                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="199.0" text="阿里链接"/>
+                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="阿里价格"/>
+                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="运费"/>
+                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="淘宝价格"/>
+                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="发货地"/>
+                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="纯利润"/>
+                                    </children>
+                                </HBox>
+                                <ListView fx:id="centenView" layoutY="30.0" prefHeight="600.0" prefWidth="1000.0"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="添加商品信息">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: #e1fffc;">
+                            <children>
+                                <Label layoutX="500.0" layoutY="20.0"  prefHeight="20.0" prefWidth="100.0" alignment="CENTER" text="添加供应商信息"
+                                       GridPane.rowIndex="0"/>
+                                <GridPane layoutX="310.0" layoutY="50.0" prefHeight="500" prefWidth="500.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0"
+                                                           halignment="CENTER"/>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"
+                                                        valignment="CENTER"/>
+                                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                                    </rowConstraints>
+                                    <children>
+                                        <Label prefHeight="20.0" prefWidth="100.0" alignment="CENTER" text="供应商名"
+                                               GridPane.rowIndex="0"/>
+                                        <Label prefHeight="20.0" prefWidth="100.0" alignment="CENTER" text="淘宝标题"
+                                               GridPane.rowIndex="1"/>
+                                        <Label prefHeight="20.0" prefWidth="100.0" alignment="CENTER" text="商品规格"
+                                               GridPane.rowIndex="2"/>
+                                        <Label prefHeight="20.0" prefWidth="100.0" alignment="CENTER" text="阿里链接"
+                                               GridPane.rowIndex="3"/>
+                                        <Label prefHeight="20.0" prefWidth="100.0" alignment="CENTER" text="阿里价格"
+                                               GridPane.rowIndex="4"/>
+                                        <Label prefHeight="20.0" prefWidth="100.0" alignment="CENTER" text="运费"
+                                               GridPane.rowIndex="5"/>
+                                        <Label prefHeight="20.0" prefWidth="100.0" alignment="CENTER" text="淘宝价格"
+                                               GridPane.rowIndex="6"/>
+                                        <Label prefHeight="20.0" prefWidth="100.0" alignment="CENTER" text="发货地"
+                                               GridPane.rowIndex="7"/>
+                                        <TextField prefHeight="20.0" prefWidth="200.0" alignment="CENTER_LEFT"
+                                                   GridPane.columnIndex="1" />
+                                        <TextField prefHeight="20.0" prefWidth="200.0" alignment="CENTER_LEFT"
+                                                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                        <TextField prefHeight="20.0" prefWidth="200.0" alignment="CENTER_LEFT"
+                                                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                        <TextField prefHeight="20.0" prefWidth="200.0" alignment="CENTER_LEFT"
+                                                   GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                        <TextField prefHeight="20.0" prefWidth="200.0" alignment="CENTER_LEFT"
+                                                   GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                                        <TextField prefHeight="20.0" prefWidth="200.0" alignment="CENTER_LEFT"
+                                                   GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                                        <TextField prefHeight="20.0" prefWidth="200.0" alignment="CENTER_LEFT"
+                                                   GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                                        <TextField prefHeight="20.0" prefWidth="200.0" alignment="CENTER_LEFT"
+                                                   GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                                        <Button text="插入" prefHeight="20.0" prefWidth="40.0" GridPane.columnIndex="1"
+                                                GridPane.rowIndex="8"/>
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

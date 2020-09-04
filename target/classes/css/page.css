@@ -1,0 +1,25 @@
+
+#Layout{
+    -fx-background-image: url("../imager/page_background.png");
+    -fx-border-radius: 10 10 10 10;
+}
+#title{
+    -fx-background-color: #fff8ed
+}
+#treeView{
+    -fx-font-size: 15px;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+    -fx-border-style: none;
+}
+#cententTextView{
+    -fx-background-color: #00000000;
+}
+#exit:hover{
+    -fx-background-color: #ff626c;
+    -fx-alignment: CENTER;
+}
+#hide:hover{
+    -fx-background-color: #ff626c;
+    -fx-alignment: CENTER;
+}

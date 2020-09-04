@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="loginLayout" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lzj.autotestpc.controller.LoginController">
+    <children>
+        <Label fx:id="welcome" layoutX="69.0" layoutY="23.0" text="欢迎登录自动化平台" />
+        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imager/login_background.jpg" />
+            </image>
+        </ImageView>
+        <Label fx:id="exit" layoutX="560.0" layoutY="15.0" onMouseClicked="#exit" pickOnBounds="true" prefHeight="30.0" prefWidth="30.0" style="-fx-font-size: 20px;-fx-alignment: CENTER;" text="×" />
+        <Label fx:id="hide" layoutX="530.0" layoutY="15.0"  onMouseClicked="#hide" pickOnBounds="true" style="-fx-font-size: 20px;-fx-alignment: CENTER;" text="-" prefHeight="30.0" prefWidth="30.0"/>
+        <Label fx:id="autotest" layoutX="198.0" layoutY="72.0" text="AUTOTEST" />
+        <TextField fx:id="tfUserName" layoutX="205.0" layoutY="153.0" prefHeight="30.0" prefWidth="205.0" promptText="请输入用户名/邮箱" />
+        <PasswordField fx:id="pfPassWord" layoutX="205.0" layoutY="210.0" prefHeight="30.0" prefWidth="205.0" promptText="请输入密码" />
+        <Label layoutX="430.0" layoutY="255.0" style="-fx-font-size: 15px" text="离线登录" />
+        <Button fx:id="bt_Login" layoutX="240.0" layoutY="300.0" mnemonicParsing="false" onAction="#submintLogin" prefHeight="40.0" prefWidth="120.0" text="登录" />
+    </children>
+</AnchorPane>

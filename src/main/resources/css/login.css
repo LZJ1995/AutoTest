@@ -1,0 +1,34 @@
+#loginLayout{
+    -fx-background-image: url("../imager/login_background.jpg");
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.1) , 5, 0.0 , 5 , 5 );
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+#welcome{
+    -fx-font-size: 15px;
+    -fx-text-fill: #6b80ff;
+
+}
+Button{
+    -fx-font-size: 20px;
+    -fx-background-color: #6b80ff;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient( #6b80ff, #777DFF);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 5 , 5 );
+}
+#exit:hover{
+    -fx-background-color: #ff626c;
+    -fx-alignment: CENTER;
+}
+#hide:hover{
+    -fx-background-color: #ff626c;
+    -fx-alignment: CENTER;
+}
+#autotest{
+    -fx-font-size: 40px;
+    -fx-font-family: "serif";
+    -fx-text-fill: #6b80ff;
+    -fx-effect: dropshadow( three-pass-box, rgba(107, 128, 255, 0.7), 5, 0.0 , 3 , 0 );
+}
