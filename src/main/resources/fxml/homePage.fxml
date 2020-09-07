@@ -63,9 +63,9 @@
                                 <HBox alignment="CENTER" layoutY="0.0" prefHeight="30.0" prefWidth="1000.0"
                                       style="-fx-background-color: #e1fffc">
                                     <children>
-                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="199.0" text="淘宝标题"/>
-                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="199.0" text="商品规格"/>
-                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="199.0" text="阿里链接"/>
+                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="248.5" text="淘宝标题"/>
+                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="90.0" text="商品规格"/>
+                                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="248.5" text="阿里链接"/>
                                         <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="阿里价格"/>
                                         <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="运费"/>
                                         <Label alignment="CENTER" prefHeight="30.0" prefWidth="80.0" text="淘宝价格"/>

@@ -81,18 +81,26 @@ public class HomePageController implements Initializable {
             String[] items = (String[]) datalist.get(i);
             HBox hBox = new HBox();
             for (int x=0;x<items.length;x++) {
-                TextField textview = new TextField(items[x]);
-                if(x>=3){
-                    textview.setPrefWidth(80);
+
+                if(x>=3||x==1){
+                    Label label=new Label(items[x]);
+                     label.setPrefWidth(90);
+                    label.setPrefHeight(30);
+                    label.setAlignment(Pos.CENTER);
+                    hBox.setPrefWidth(1000);
+                    hBox.getChildren().addAll(label);
                 }else {
-                    textview.setPrefWidth(199);
+                    TextField textview = new TextField(items[x]);
+                    textview.setPrefWidth(248.5);
+                    textview.setEditable(false);
+                    textview.setId("cententTextView");
+                    textview.setPrefHeight(30);
+                    textview.setAlignment(Pos.CENTER);
+                    hBox.setPrefWidth(1000);
+                    hBox.getChildren().addAll(textview);
                 }
-                textview.setEditable(false);
-                textview.setId("cententTextView");
-                textview.setPrefHeight(30);
-                textview.setAlignment(Pos.CENTER);
-                hBox.setPrefWidth(1000);
-                hBox.getChildren().addAll(textview);
+
+
             }
             hbox.add(hBox);
         }
