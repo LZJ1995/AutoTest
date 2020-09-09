@@ -1,25 +1,97 @@
 
-#Layout{
+#layout {
     -fx-background-image: url("../imager/page_background.png");
     -fx-border-radius: 10 10 10 10;
 }
-#title{
+
+#title {
     -fx-background-color: #fff8ed
 }
-#treeView{
+
+#treeView {
     -fx-font-size: 15px;
     -fx-border-radius: 10 10 10 10;
     -fx-background-radius: 10 10 10 10;
     -fx-border-style: none;
 }
-#cententTextView{
+
+#anchorBar Label {
+    -fx-font-size: 12px;
+    -fx-pref-width: 50px;
+    -fx-alignment: center;
+}
+
+#anchorBar Label:hover {
+    -fx-background-color: #97a6ff;
+    -fx-border-color: #4747ff;
+}
+
+
+#hboxBar Label {
+    -fx-font-size: 13px;
+    -fx-alignment: center;
+    -fx-pref-width: 70px;
+    -fx-pref-height: 30px;
+}
+
+#hboxBar Label:hover {
+    -fx-background-color: #95978e;
+}
+
+#shouDevice {
+    -fx-background-color: #ffffffff;
+    -fx-alignment: center;
+    -fx-pref-height: 20;
+    -fx-pref-width: 200;
+}
+
+#flushDevice {
+    -fx-alignment: center;
+    -fx-pref-height: 20;
+    -fx-pref-width: 100;
+}
+
+#offDevice {
+    -fx-alignment: center;
+    -fx-pref-height: 20;
+    -fx-pref-width: 100;
+}
+
+#flushDevice:hover {
+    -fx-background-color: #95978e;
+}
+
+#offDevice:hover {
+    -fx-background-color: #95978e;
+}
+
+#shouDevice Label {
+    -fx-alignment: center;
+    -fx-pref-height: 20;
+    -fx-pref-width: 100;
+    -fx-border-color: #000000;
+    -fx-text-fill: lime;
+}
+
+#deviceName {
+    -fx-text-fill: #000000;
+}
+
+#deviceError {
+    -fx-text-fill: red;
+    -fx-pref-width: 200;
+}
+
+#cententTextView {
     -fx-background-color: #00000000;
 }
-#exit:hover{
+
+#exit:hover {
     -fx-background-color: #ff626c;
     -fx-alignment: CENTER;
 }
-#hide:hover{
+
+#hide:hover {
     -fx-background-color: #ff626c;
     -fx-alignment: CENTER;
 }

@@ -41,12 +41,13 @@ public class LoginController implements Initializable {
         stage = (Stage) loginLayout.getScene().getWindow();
         utils = new FXMLUtils();
     }
+    public void initialize(URL location, ResourceBundle resources) {
+    }
 
     public void submintLogin(ActionEvent event) throws Exception {
         HomePageController controller = (HomePageController) utils.replaceSceneContent(stage, "/fxml/homePage.fxml", true);
-        controller.init();
-        controller.loadTreeMenu("");
-        controller.loadContent();
+        controller.init(utils);
+        System.out.println(utils.getAllDvice());
     }
 
     public void exit(MouseEvent event) {
@@ -57,6 +58,5 @@ public class LoginController implements Initializable {
         stage.toBack();
         stage.setIconified(true);
     }
-    public void initialize(URL location, ResourceBundle resources) {
-    }
+
 }
