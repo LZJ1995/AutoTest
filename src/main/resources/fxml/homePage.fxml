@@ -3,79 +3,67 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.web.*?>
 
-<AnchorPane fx:id="layout" focusTraversable="true" stylesheets="@../css/page.css"
-            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.lzj.autotestpc.controller.HomePageController">
+<AnchorPane fx:id="layout" focusTraversable="true" stylesheets="@../css/page.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lzj.autotestpc.controller.HomePageController">
     <children>
 
         <AnchorPane fx:id="title" prefHeight="30.0">
             <children>
                 <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../imager/login_background.jpg"/>
+                        <Image url="@../imager/login_background.jpg" />
                     </image>
                 </ImageView>
-                <Label fx:id="welcome" layoutX="60.0" layoutY="10.0" prefHeight="15.0" text="欢迎登录自动化平台"/>
-                <Label fx:id="hide" layoutX="1000.0" onMouseClicked="#hide" pickOnBounds="true" prefHeight="30.0"
-                       prefWidth="30.0" style="-fx-font-size: 20px;-fx-alignment: CENTER;" text="-"/>
-                <Label fx:id="exit" layoutX="1000.0" onMouseClicked="#exit" pickOnBounds="true" prefHeight="30.0"
-                       prefWidth="30.0" style="-fx-font-size: 20px;-fx-alignment: CENTER;" text="×"/>
+                <Label fx:id="welcome" layoutX="60.0" layoutY="10.0" prefHeight="15.0" text="欢迎登录自动化平台" />
+                <Label fx:id="hide" layoutX="1000.0" onMouseClicked="#hide" pickOnBounds="true" prefHeight="30.0" prefWidth="30.0" style="-fx-font-size: 20px;-fx-alignment: CENTER;" text="-" />
+                <Label fx:id="exit" layoutX="1000.0" onMouseClicked="#exit" pickOnBounds="true" prefHeight="30.0" prefWidth="30.0" style="-fx-font-size: 20px;-fx-alignment: CENTER;" text="×" />
             </children>
-
         </AnchorPane>
-        <AnchorPane fx:id="anchorBar" layoutY="30.0" prefHeight="20.0" prefWidth="1000.0"
-                    style="-fx-background-color: chartreuse">
+        <AnchorPane fx:id="anchorBar" layoutY="30.0" prefHeight="20.0" prefWidth="1000.0" style=" -fx-background-color: #fff8ed">
             <children>
                 <Label layoutX="10.0" layoutY="3.0" text="项目"/>
-                <Label layoutX="60.0" layoutY="3.0" text="脚本"/>
-                <Label layoutX="110.0" layoutY="3.0" text="测试"/>
-                <Label layoutX="160.0" layoutY="3.0" text="设备"/>
-                <Label layoutX="210.0" layoutY="3.0" text="插件"/>
-                <Label layoutX="260.0" layoutY="3.0" text="帮助"/>
-                <Label layoutX="1200.0" layoutY="3.0" text="用户名"/>
-                <Label layoutX="1300.0" layoutY="3.0" text="正常模式"/>
+                <Label layoutX="60.0" layoutY="3.0" text="脚本" />
+                <Label layoutX="110.0" layoutY="3.0" text="测试" />
+                <Label layoutX="160.0" layoutY="3.0" text="设备" />
+                <Label layoutX="210.0" layoutY="3.0" text="插件" />
+                <Label layoutX="260.0" layoutY="3.0" text="帮助" />
+                <Label layoutX="1200.0" layoutY="3.0" text="用户名" />
+                <Label layoutX="1300.0" layoutY="3.0" text="正常模式" />
             </children>
         </AnchorPane>
-        <HBox fx:id="hboxBar" layoutY="50.0" prefHeight="40.0" prefWidth="1300.0" alignment="CENTER_LEFT" spacing="5"
-              style="-fx-background-color: #e1fffc;">
+        <HBox fx:id="hboxBar" alignment="CENTER_LEFT" layoutY="50.0" prefHeight="40.0" prefWidth="1300.0" spacing="5" style="-fx-background-color: #fff8ed;">
             <children>
-                <Label text="执行脚本"/>
-                <Label text="总线(暂时不开发)"/>
-                <Label text="截图"/>
-                <Label text="语音(暂时不开发)"/>
-                <Label text="录制脚本"/>
-                <Label text="删除步骤"/>
-                <Label text="保存脚本"/>
-                <Label text="调试脚本"/>
+                <Label text="执行脚本" />
+                <Label text="总线(暂时不开发)" />
+                <Label text="截图" />
+                <Label text="语音(暂时不开发)" />
+                <Label text="录制脚本" />
+                <Label text="删除步骤" />
+                <Label text="保存脚本" />
+                <Label text="调试脚本" />
             </children>
         </HBox>
 
 
-        <TreeView fx:id="treeView" layoutX="20" layoutY="100.0" opacity="0.63" prefHeight="350.0" prefWidth="200.0 ">
+        <TreeView fx:id="treeView" layoutX="20" layoutY="100.0" prefHeight="350.0" prefWidth="200.0 ">
 
         </TreeView>
-        <VBox fx:id="deviceList" layoutX="20.0" layoutY="470.0" prefHeight="260.0" prefWidth="200.0"
-              style="-fx-background-color: #ffffffff;">
+        <VBox fx:id="deviceList" layoutX="20.0" layoutY="470.0" prefHeight="260.0" prefWidth="200.0" style="-fx-background-color: #ffffffff;">
             <children>
-                <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="5"
-                      style="-fx-background-color: #e1fffc;">
+                <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="5" style="-fx-background-color: #e1fffc;">
                     <children>
-                        <Label fx:id="flushDevice"  text="刷新设备"/>
-                        <Label fx:id="offDevice"  text="断开连接"  />
+                        <Label fx:id="flushDevice" text="刷新设备" />
+                        <Label fx:id="offDevice" text="断开连接" />
                     </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" style="-fx-background-color: #e1fffc;">
                     <children>
-                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="100" style="-fx-border-color: #000000"
-                               text="设备名称"/>
-                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="100" style="-fx-border-color: #000000"
-                               text="当前状态"/>
+                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="100" style="-fx-border-color: #000000" text="设备名称" />
+                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="100" style="-fx-border-color: #000000" text="当前状态" />
                     </children>
                 </HBox>
             </children>
         </VBox>
-        <fx:include fx:id="showCentent" layoutX="240.0" layoutY="100.0" source="tbGoodsInfo.fxml"/>
+        <fx:include fx:id="showCentent" layoutX="240.0" layoutY="100.0" source="demoEditor.fxml" />
     </children>
 </AnchorPane>

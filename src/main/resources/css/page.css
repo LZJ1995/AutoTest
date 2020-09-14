@@ -10,9 +10,6 @@
 
 #treeView {
     -fx-font-size: 15px;
-    -fx-border-radius: 10 10 10 10;
-    -fx-background-radius: 10 10 10 10;
-    -fx-border-style: none;
 }
 
 #anchorBar Label {
@@ -94,4 +91,14 @@
 #hide:hover {
     -fx-background-color: #ff626c;
     -fx-alignment: CENTER;
+}
+#demoEditor{
+    -fx-font-size: 16px;
+}
+#showRow{
+
+    -fx-font-size: 16px;
+}
+#showRow.scroll-bar:vertical:disabled {
+    -fx-opacity: 0;
 }
