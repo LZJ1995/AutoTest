@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="630.0" prefWidth="800.0" stylesheets="@../css/page.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lzj.autotestpc.controller.DemoEditorController">
+    <children>
+        <ScrollPane  layoutX="3.00" layoutY="3.00" prefHeight="630.0" prefWidth="50.0" style="-fx-hbar-policy: never;-fx-vbar-policy: never">
+            <content>
+                <TextArea fx:id="showRow" prefHeight="630.0" prefWidth="50.0" text="1" disable="true"/>
+            </content>
+        </ScrollPane>
+        <ScrollPane layoutX="50.0" layoutY="3.00" prefHeight="630.0" prefWidth="750.0" style="-fx-hbar-policy: never;-fx-vbar-policy: never">
+            <content>
+                <TextArea fx:id="demoEditor" prefHeight="630.0" prefWidth="750.0 " />
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>
