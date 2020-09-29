@@ -1,30 +1,24 @@
 package com.lzj.autotestpc.controller;
 
-import com.lzj.autotestpc.main.startApplication;
+
 import com.lzj.autotestpc.tool.FXMLUtils;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+
+import javafx.geometry.Side;
+
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
-import javafx.stage.Window;
 
-import java.awt.*;
-import java.io.IOException;
+import javafx.stage.Stage;
+
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 public class HomePageController implements Initializable {
@@ -46,6 +40,10 @@ public class HomePageController implements Initializable {
     private FXMLUtils util;
     @FXML
     private VBox deviceList;
+    @FXML
+    private ContextMenu showScriptMenu;
+    @FXML
+    private Label script;
 
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -85,14 +83,14 @@ public class HomePageController implements Initializable {
         ArrayList<String> devices = util.getAllDvice();
         HBox hBox = new HBox();
         hBox.setId("shouDevice");
-        if(devices!=null&&devices.size()>1) {
+        if (devices != null && devices.size() > 1) {
             Label deviceName = new Label(devices.get(0));
             deviceName.setId("deviceName");
             if (devices.get(2).equals("device")) {
                 Label devicesType = new Label("在线");
                 hBox.getChildren().addAll(deviceName, devicesType);
             }
-        }else {
+        } else {
             Label deviceError = new Label("没有设备连接！");
             deviceError.setId("deviceError");
             hBox.getChildren().addAll(deviceError);
@@ -108,4 +106,13 @@ public class HomePageController implements Initializable {
         stage.toBack();
         stage.setIconified(true);
     }
+
+    public void actionScript(MouseEvent event) {
+        showScriptMenu.show(anchorBar, Side.BOTTOM, script.getLayoutX(), script.getLayoutY());
+    }
+
+    public void actionProject() {
+
+    }
+
 }
