@@ -5,25 +5,39 @@
 }
 
 #title {
-    -fx-background-color: #fff8ed
+    -fx-border-color: #95978e;
+    -fx-background-color: #e1fffc
 }
 
 #treeView {
     -fx-font-size: 15px;
+    -fx-border-color: #95978e;
+    -fx-pref-width: 200.0;
+    -fx-pref-height: 370.0;
 }
 
-#anchorBar Label {
-    -fx-font-size: 12px;
-    -fx-pref-width: 50px;
+#menuBar {
+    -fx-pref-height: 20px;
+    -fx-background-color: #e1fffc;
+}
+Menu{
+    -fx-pref-height: 20px;
     -fx-alignment: center;
 }
+#anchorBar{
+    -fx-border-color: #95978e;
+    -fx-background-color: #e1fffc
+}
 
-#anchorBar Label:hover {
+#anchorBar Menu:hover {
     -fx-background-color: #97a6ff;
     -fx-border-color: #4747ff;
 }
 
-
+#hboxBar{
+    -fx-background-color: #e1fffc;
+    -fx-border-color: #95978e;
+}
 #hboxBar Label {
     -fx-font-size: 13px;
     -fx-alignment: center;
@@ -35,11 +49,11 @@
     -fx-background-color: #95978e;
 }
 
-#shouDevice {
+#showDevice {
     -fx-background-color: #ffffffff;
     -fx-alignment: center;
     -fx-pref-height: 20;
-    -fx-pref-width: 200;
+    -fx-pref-width: 150;
 }
 
 #flushDevice {
@@ -62,7 +76,7 @@
     -fx-background-color: #95978e;
 }
 
-#shouDevice Label {
+#showDevice Label {
     -fx-alignment: center;
     -fx-pref-height: 20;
     -fx-pref-width: 100;
@@ -77,6 +91,7 @@
 #deviceError {
     -fx-text-fill: red;
     -fx-pref-width: 200;
+    -fx-alignment: center;
 }
 
 #cententTextView {
@@ -101,4 +116,8 @@
 }
 #showRow.scroll-bar:vertical:disabled {
     -fx-opacity: 0;
+}
+#scriptTitle Label{
+    -fx-border-color: #95978e;
+    -fx-alignment: CENTER;
 }

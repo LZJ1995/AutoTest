@@ -1,19 +1,10 @@
 package com.lzj.autotestpc.test;
 
-import javafx.application.Application;
+import java.net.MalformedURLException;
 
-import javafx.stage.Stage;
+public class TEST {
 
-import java.io.IOException;
-
-public class TEST extends Application {
-
-    public static void main(String[] args) {
-        launch(args);
+    public static void main(String[] args) throws MalformedURLException {
     }
 
-    @Override
-    public void start(Stage stage) throws IOException {
-
-    }
 }

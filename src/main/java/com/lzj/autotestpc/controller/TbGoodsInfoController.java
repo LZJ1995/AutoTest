@@ -54,8 +54,6 @@ public class TbGoodsInfoController implements Initializable {
                     hBox.setPrefWidth(1000);
                     hBox.getChildren().addAll(textview);
                 }
-
-
             }
             hbox.add(hBox);
         }
