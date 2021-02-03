@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.152" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.lzj.autotestpc.controller.AddScriptController">
+    <children>
+        <Label layoutX="164.0" layoutY="38.0" prefHeight="80.0" prefWidth="400.0"
+               style="-fx-alignment: center;-fx-font-size: 20px" text="请选择" textFill="#eb1010">
+            <font>
+                <Font size="56.0"/>
+            </font>
+        </Label>
+        <HBox prefHeight="50.0" prefWidth="400.0" style="-fx-alignment: top-center">
+            <children>
+                <Label prefHeight="50.0" prefWidth="133.0" style="-fx-alignment: center; -fx-font-size: 18px"
+                       text="查找类型"/>
+                <VBox prefHeight="50.0" prefWidth="185.0" style="-fx-alignment: center;">
+                    <children>
+                        <ChoiceBox prefHeight="25.0" prefWidth="200.0"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox prefHeight="50.0" prefWidth="400.0" style="-fx-alignment: center">
+            <children>
+                <RadioButton mnemonicParsing="false" prefHeight="16.0" prefWidth="39.0" text="ID"/>
+                <RadioButton mnemonicParsing="false" prefHeight="16.0" prefWidth="77.0" text="Text"/>
+                <HBox prefHeight="50.0" prefWidth="169.0" style="-fx-alignment: center">
+                    <children>
+                        <TextField prefHeight="26.0" prefWidth="169.0"/>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+        <HBox prefHeight="50.0" prefWidth="400.0" style="-fx-alignment: top-center">
+            <children>
+                <Label prefHeight="50.0" prefWidth="133.0" style="-fx-alignment: center; -fx-font-size: 18px"
+                       text="等待时间"/>
+                <VBox prefHeight="50.0" prefWidth="185.0" style="-fx-alignment: center;">
+                    <children>
+                        <TextField prefHeight="26.0" prefWidth="75.0"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox prefHeight="50.0" prefWidth="400.0" style="-fx-alignment: top-center">
+            <children>
+                <Label prefHeight="50.0" prefWidth="133.0" style="-fx-alignment: center; -fx-font-size: 18px"
+                       text="是否存在"/>
+                <HBox prefHeight="50.0" prefWidth="185.0" style="-fx-alignment: center-left; ">
+                    <children>
+                        <ChoiceBox prefHeight="25.0" prefWidth="75.0"/>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+        <HBox prefHeight="50.0" prefWidth="400.0" style="-fx-alignment: top-center">
+            <children>
+                <Label prefHeight="50.0" prefWidth="133.0" style="-fx-alignment: center; -fx-font-size: 18px"
+                       text="备注"/>
+                <VBox prefHeight="50.0" prefWidth="185.0" style="-fx-alignment: center;">
+                    <children>
+                        <TextField prefHeight="26.0" prefWidth="75.0"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="400.0" style="-fx-alignment: center">
+            <children>
+                <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="87.0" text="插入">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>

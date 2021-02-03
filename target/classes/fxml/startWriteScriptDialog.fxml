@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.152"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.lzj.autotestpc.controller.StartWriteScriptDialogController">
+    <VBox prefHeight="364.0" prefWidth="300.0" style="-fx-alignment: center;-fx-font-size: 15">
+        <Label prefHeight="88.0" prefWidth="200.0" style="-fx-alignment: center;-fx-font-size: 15" text="请进入要测试APP"/>
+        <Label text="刷新" prefWidth="80.0" prefHeight="40" onMouseClicked="#refresh"/>
+        <VBox prefHeight="252.0" prefWidth="300.0" style="-fx-alignment: center;-fx-font-size: 15" spacing="5">
+            <RadioButton mnemonicParsing="true" text="获取当前应用包名及Activity" selected="true" disable="true"/>
+            <Label prefWidth="200.0" style="-fx-alignment: center;-fx-font-size: 15" text="请选择所测试APP 包名"/>
+            <Label fx:id="selectPackge" prefWidth="260.0" text="没有找到所测试包名"/>
+            <Label prefWidth="200.0" style="-fx-alignment: center;-fx-font-size: 15" text="要启动的Activity"/>
+            <Label fx:id="startActvityShow" prefWidth="260" text="没有找到启动Activity"/>
+        </VBox>
+        <Button mnemonicParsing="false" text="开始测试" onMouseClicked="#startWritTest"/>
+    </VBox>
+</AnchorPane>
