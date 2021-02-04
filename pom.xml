@@ -20,6 +20,14 @@
         </plugins>
     </build>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.android.tools.ddms/ddmlib -->
+        <!--dmlib adb优化工具-->
+        <dependency>
+            <groupId>com.android.tools.ddms</groupId>
+            <artifactId>ddmlib</artifactId>
+            <version>26.0.0</version>
+        </dependency>
+
         <!--fontawesomefx-8.9.jar 提供好看的字体-->
         <dependency>
             <groupId>de.jensd</groupId>

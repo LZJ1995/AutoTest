@@ -1,6 +1,8 @@
 package com.lzj.autotestpc.bean;
 
-public class ScriptStepBean {
+import java.io.Serializable;
+
+public class ScriptStepBean implements Serializable {
 
     private int number;
     private String action;

@@ -3,105 +3,93 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="layout" focusTraversable="true" stylesheets="@../css/page.css"
-      xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.lzj.autotestpc.controller.HomePageController">
+<VBox fx:id="layout" focusTraversable="true" stylesheets="@../css/page.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lzj.autotestpc.controller.HomePageController">
     <children>
         <AnchorPane fx:id="anchorBar" prefHeight="20.0">
             <children>
 
                 <MenuBar fx:id="menuBar" layoutX="10.0" layoutY="3.0">
                     <!-- 设置action实际上是作用于它的MenuItem身上的 -->
-                    <Menu text="项目" onAction="#actionMenu">
+                    <Menu onAction="#actionMenu" text="项目">
                         <items>
-                            <MenuItem text="打开程序位置"/>
-                            <MenuItem text="新建项目工程"/>
-                            <MenuItem text="更新程序"/>
-                            <MenuItem text="系统设置"/>
-                            <MenuItem text="退出"/>
+                            <MenuItem text="打开程序位置" />
+                            <MenuItem text="新建项目工程" />
+                            <MenuItem text="更新程序" />
+                            <MenuItem text="系统设置" />
+                            <MenuItem text="退出" />
                         </items>
                     </Menu>
-                    <Menu text="脚本" onAction="#actionMenu">
+                    <Menu onAction="#actionMenu" text="脚本">
                         <items>
-                            <MenuItem text="新建脚本"/>
-                            <MenuItem text="刷新脚本列表"/>
-                            <MenuItem text="运行选中脚本"/>
-                            <MenuItem text="清空选中脚本"/>
-                            <MenuItem text="搜索脚本"/>
+                            <MenuItem text="新建脚本" />
+                            <MenuItem text="刷新脚本列表" />
+                            <MenuItem text="运行选中脚本" />
+                            <MenuItem text="清空选中脚本" />
+                            <MenuItem text="搜索脚本" />
                         </items>
                     </Menu>
-                    <Menu text="测试" onAction="#actionMenu">
+                    <Menu onAction="#actionMenu" text="测试">
                         <items>
-                            <MenuItem text="新测试"/>
-                            <MenuItem text="调试测试脚本"/>
-                            <MenuItem text="保存测试脚本"/>
-                            <MenuItem text="脚本另存为"/>
-                            <MenuItem text="测试结果报告"/>
+                            <MenuItem text="新测试" />
+                            <MenuItem text="调试测试脚本" />
+                            <MenuItem text="保存测试脚本" />
+                            <MenuItem text="脚本另存为" />
+                            <MenuItem text="测试结果报告" />
                         </items>
                     </Menu>
-                    <Menu text="设备" onAction="#actionMenu">
+                    <Menu onAction="#actionMenu" text="设备">
                         <items>
-                            <MenuItem text="重新连接设备"/>
+                            <MenuItem text="重新连接设备" />
                         </items>
                     </Menu>
-                    <Menu text="插件" onAction="#actionMenu">
+                    <Menu onAction="#actionMenu" text="插件">
                         <items>
-                            <MenuItem text="UiAutomatorView"/>
-                            <MenuItem text="Monkey"/>
+                            <MenuItem text="UiAutomatorView" />
+                            <MenuItem text="Monkey" />
                         </items>
                     </Menu>
-                    <Menu text="帮助" onAction="#actionMenu">
+                    <Menu onAction="#actionMenu" text="帮助">
                         <items>
-                            <MenuItem text="产品使用说明"/>
-                            <MenuItem text="关于"/>
+                            <MenuItem text="产品使用说明" />
+                            <MenuItem text="关于" />
                         </items>
                     </Menu>
-                    <Menu text="未登录" onAction="#actionMenu"/>
-                    <Menu text="正常模式" onAction="#actionMenu"/>
+                    <Menu onAction="#actionMenu" text="未登录" />
+                    <Menu onAction="#actionMenu" text="正常模式" />
                 </MenuBar>
 
             </children>
         </AnchorPane>
         <HBox fx:id="hboxBar" alignment="CENTER_LEFT" layoutY="20.0" prefHeight="40.0" prefWidth="1300.0" spacing="5">
             <children>
-                <Label text="执行脚本"/>
-                <Label text="总线(暂时不开发)"/>
-                <Label text="截图" onMouseClicked="#screenShot"/>
-                <Label text="语音(暂时不开发)"/>
-                <Label text="编写脚本" onMouseClicked="#writeScript"/>
-                <Label text="删除步骤"/>
-                <Label text="保存脚本" onMouseClicked="#saveScript"/>
-                <Label text="调试脚本" onMouseClicked="#debugScript"/>
+                <Label text="执行脚本" />
+                <Label text="总线(暂时不开发)" />
+                <Label onMouseClicked="#screenShot" text="截图" />
+                <Label text="语音(暂时不开发)" />
+                <Label onMouseClicked="#writeScript" text="编写脚本" />
+                <Label text="删除步骤" />
+                <Label onMouseClicked="#saveScript" text="保存脚本" />
+                <Label onMouseClicked="#debugScript" text="调试脚本" />
             </children>
         </HBox>
-        <HBox>
+        <HBox  prefWidth="1300.0" spacing="5">
             <VBox>
                 <children>
-                    <TreeView fx:id="treeView"/>
-                    <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0" spacing="5"
-                          style="-fx-background-color: #e1fffc;">
-                        <children>
-                            <Label fx:id="flushDevice" text="刷新设备"/>
-                            <Label fx:id="offDevice" text="断开连接"/>
-                        </children>
-                    </HBox>
-                    <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0"
-                          style="-fx-background-color: #e1fffc;">
-                        <children>
-                            <Label alignment="CENTER" prefHeight="20.0" prefWidth="100"
-                                   style="-fx-border-color: #000000"
-                                   text="设备名称"/>
-                            <Label alignment="CENTER" prefHeight="20.0" prefWidth="100"
-                                   style="-fx-border-color: #000000"
-                                   text="当前状态"/>
-                        </children>
-                    </HBox>
+                    <TreeView fx:id="treeView" prefWidth="250.0" />
+                    <TableView fx:id="deviceTable" prefHeight="220.0" prefWidth="250.0" style="-fx-background-color: #ffffffff;">
+                        <placeholder>
+                            <Label text="暂无连接设备" />
+                        </placeholder>
+                        <columns>
+                            <TableColumn sortable="false" fx:id="deviceName" prefWidth="90.0" text="设备名称" />
+                            <TableColumn sortable="false" fx:id="deviceState" prefWidth="80.0" text="当前状态" />
+                            <TableColumn sortable="false" fx:id="deviceVersion" prefWidth="80" text="系统版本" />
+                        </columns>
 
-                    <ListView fx:id="deviceList" prefHeight="200.0" prefWidth="200.0"
-                              style="-fx-background-color: #ffffffff;"/>
+                    </TableView>
                 </children>
             </VBox>
-            <VBox>
+            <VBox prefHeight="625.0" prefWidth="851.0">
                 <children>
                     <TabPane prefHeight="450.0" prefWidth="900.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
                         <tabs>
@@ -109,30 +97,18 @@
                                 <content>
                                     <AnchorPane>
                                         <children>
-                                            <HBox fx:id="scriptTitle" prefHeight="30.0" prefWidth="900.0"
-                                                  style="-fx-background-color: #e1fffc">
-                                                <children>
-                                                    <Label prefHeight="30.0" prefWidth="50.0" text="全选"/>
-                                                    <Label prefHeight="30.0" prefWidth="50.0" text="序号"/>
-                                                    <Label prefHeight="30.0" prefWidth="50.0" text="优先级"/>
-                                                    <Label prefHeight="30.0" prefWidth="200.0" text="动作"/>
-                                                    <Label prefHeight="30.0" prefWidth="200.0" text="属性"/>
-                                                    <Label prefHeight="30.0" prefWidth="150.0" text="值"/>
-                                                    <Label prefHeight="30.0" prefWidth="200.0" text="备注"/>
-                                                </children>
-                                            </HBox>
-                                            <TableView onMouseClicked="#showMune" fx:id="scriptView" prefHeight="450.0"
-                                                       prefWidth="900.0">
+                                            <TableView editable="true" fx:id="scriptView" onMouseClicked="#showMune" prefHeight="420.0" prefWidth="900.0">
+                                                <placeholder>
+                                                    <Label text="暂无脚本" />
+                                                </placeholder>
                                                 <columns>
-                                                    <TableColumn fx:id="allSelect" prefWidth="50.0" text="全选"/>
-                                                    <TableColumn fx:id="number" prefWidth="50.0" text="序号"/>
-                                                    <TableColumn fx:id="action" prefWidth="200.0" text="动作"/>
-                                                    <TableColumn fx:id="attribute" prefWidth="200.0" text="属性"/>
-                                                    <TableColumn fx:id="value" prefWidth="200.0" text="值"/>
-                                                    <TableColumn fx:id="remark" prefWidth="200.0" text="备注"/>
+                                                    <TableColumn   sortable="false" fx:id="numberColumn" prefWidth="50.0" text="序号" />
+                                                    <TableColumn  sortable="false" fx:id="actionColumn" prefWidth="200.0" text="动作" />
+                                                    <TableColumn  sortable="false" fx:id="attributeColumn" prefWidth="200.0" text="属性" />
+                                                    <TableColumn editable="true"  sortable="false" fx:id="valueColumn" prefWidth="150.0" text="值" />
+                                                    <TableColumn editable="true"  sortable="false" fx:id="remarkColumn" prefWidth="250.0" text="备注" />
                                                 </columns>
                                             </TableView>
-
                                         </children>
                                     </AnchorPane>
                                 </content>
@@ -141,17 +117,14 @@
                                 <content>
                                     <AnchorPane>
                                         <children>
-                                            <ScrollPane prefHeight="630.0" prefWidth="50.0"
-                                                        style="-fx-hbar-policy: never;-fx-vbar-policy: never">
+                                            <ScrollPane prefHeight="630.0" prefWidth="50.0" style="-fx-hbar-policy: never;-fx-vbar-policy: never">
                                                 <content>
-                                                    <TextArea fx:id="showRow" disable="true" prefHeight="630.0"
-                                                              prefWidth="50.0" text="1"/>
+                                                    <TextArea fx:id="showRow" disable="true" prefHeight="630.0" prefWidth="50.0" text="1" />
                                                 </content>
                                             </ScrollPane>
-                                            <ScrollPane layoutX="50.0" prefHeight="630.0" prefWidth="900.0"
-                                                        style="-fx-hbar-policy: never;-fx-vbar-policy: never">
+                                            <ScrollPane layoutX="50.0" prefHeight="630.0" prefWidth="900.0" style="-fx-hbar-policy: never;-fx-vbar-policy: never">
                                                 <content>
-                                                    <TextArea fx:id="demoEditor" prefHeight="630.0" prefWidth="900.0 "/>
+                                                    <TextArea fx:id="demoEditor" prefHeight="630.0" prefWidth="900.0 " />
                                                 </content>
                                             </ScrollPane>
                                         </children>
@@ -162,6 +135,14 @@
                     </TabPane>
                 </children>
             </VBox>
+            <TableView fx:id="ScirptOperation" prefHeight="220.0" prefWidth="250.0" style="-fx-background-color: #ffffffff;">
+                <placeholder>
+                    <Label text="暂无操作步骤" />
+                </placeholder>
+                <columns>
+                    <TableColumn  sortable="false"  fx:id="OperationName" prefWidth="250.0" text="操作步骤" />
+                </columns>
+            </TableView>
         </HBox>
     </children>
 </VBox>

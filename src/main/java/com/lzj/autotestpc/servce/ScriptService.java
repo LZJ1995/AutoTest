@@ -1,16 +1,26 @@
 package com.lzj.autotestpc.servce;
 
-import com.lzj.autotestpc.bean.StartDeviceBean;
+import com.android.ddmlib.AdbCommandRejectedException;
+import com.android.ddmlib.IDevice;
+import com.android.ddmlib.RawImage;
+import com.android.ddmlib.TimeoutException;
+import com.lzj.autotestpc.bean.DeviceInfo;
 import com.lzj.autotestpc.controller.HomePageController;
 import com.lzj.autotestpc.servce.impl.ScriptServiceImp;
 import com.lzj.autotestpc.tool.ScriptTool;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * 脚本service
@@ -80,11 +90,6 @@ public class ScriptService implements ScriptServiceImp {
                 log.info("packge :" + lin);
         }
         return appInfo;
-    }
-
-    @Override
-    public void getDeviceInfo(ArrayList<StartDeviceBean> startDeviceInfos) {
-
     }
 
 

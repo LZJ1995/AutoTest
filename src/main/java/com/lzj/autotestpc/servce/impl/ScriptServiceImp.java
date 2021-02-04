@@ -1,6 +1,7 @@
 package com.lzj.autotestpc.servce.impl;
 
-import com.lzj.autotestpc.bean.StartDeviceBean;
+import com.android.ddmlib.IDevice;
+import com.lzj.autotestpc.bean.DeviceInfo;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,12 +21,6 @@ public interface ScriptServiceImp {
      * @return
      */
     public ArrayList<String> getPackge();
-
-    /**
-     * 获取用户选择运行的设备信息
-     */
-   public void getDeviceInfo(ArrayList<StartDeviceBean> startDeviceInfos);
-
     /**
      * 执行脚本
      */

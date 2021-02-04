@@ -1,6 +1,11 @@
 package com.lzj.autotestpc.tool;
 
-import com.lzj.autotestpc.bean.StartDeviceBean;
+import com.android.ddmlib.AdbCommandRejectedException;
+import com.android.ddmlib.IDevice;
+import com.android.ddmlib.RawImage;
+import com.android.ddmlib.TimeoutException;
+import com.lzj.autotestpc.bean.DeviceInfo;
+import com.lzj.autotestpc.servce.ScriptService;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
@@ -16,12 +21,14 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
-import java.io.BufferedReader;
-import java.io.Closeable;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
+import java.io.*;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Optional;
 
 public class ScriptTool {
@@ -78,80 +85,6 @@ public class ScriptTool {
     }
 
     /**
-     * 获取设备信息
-     *
-     * @return
-     */
-    public ArrayList<StartDeviceBean> getAllDvice() {
-        Process process = null;
-        BufferedReader reader = null;
-        String line = null;
-        StartDeviceBean bean;
-        ArrayList<String> listDevice = new ArrayList<String>();
-        ArrayList<StartDeviceBean> deviceInfo = new ArrayList<StartDeviceBean>();
-        //设置adb.exe存放路径，如果设置了环境变量，直接输入adb即可
-        String adbPath = "adb";
-        //执行adb device操作，查看pc当前连接手机或模拟器设备列表
-        //注意：一定要先配置好sdk环境变量，否则无法直接执行adb命令
-        try {
-            process = cmdAdb(adbPath + " devices -l");
-            if (process != null) {
-                reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-                while ((line = reader.readLine()) != null) {
-                    if (!line.equals("List of devices attached") && !line.equals("")) {
-                        listDevice.add(line);
-                    }
-                }
-                if (!listDevice.contains("daemon started successfully")) {
-                    if (listDevice != null && listDevice.size() > 0) {
-                        if (!listDevice.contains("device")) {
-                            for (int i = 0; i < listDevice.size(); i++) {
-                                bean = new StartDeviceBean();
-                                //设备序列号
-                                bean.setDeviceSN(listDevice.get(i).split(" ", 2)[0]);
-                                //获取手机设备连接状态，目前状态有：device(正常)、offline、unauthorized
-                                String type = listDevice.get(i).split(" p")[0];
-                                type = type.split(" ")[type.split(" ").length - 1];
-                                bean.setDeviceType(type);
-                                //获取手机类型
-                                bean.setDeviceModel(listDevice.get(i).split("model:")[1].split(" ")[0]);
-                                //获取手机安卓版本
-                                String shell = adbPath + " -s " + bean.getDeviceSN() + " shell getprop ro.build.version.release";
-                                process = cmdAdb(shell);
-                                if (process != null) {
-                                    reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-                                    if ((reader.readLine()) != null) {
-                                        bean.setDeviceVersion(reader.readLine());
-                                    }
-                                }
-                                deviceInfo.add(bean);
-                            }
-                        } else {
-                            log.info("当前设备列表中，没有device类型连接设备，请检查！");
-                        }
-                    } else {
-                        log.info("当前设备列表没有连接的设备，请检查！");
-                    }
-                } else {
-                    getAllDvice();
-                }
-            } else {
-                log.info("当前执行adb命令异常，请检查adb环境！");
-            }
-        } catch (IOException e) {
-            log.error("IOException" + e.getMessage());
-            return null;
-        } finally {
-            closeStream(reader);
-            if (process != null) {
-                process.destroy();
-            }
-        }
-
-        return deviceInfo;
-    }
-
-    /**
      * 执行ADB命令
      *
      * @param adbCmd adb命令
@@ -193,6 +126,62 @@ public class ScriptTool {
         }
 
         return buttonSelected;
+    }
+
+    /**
+     * 截图
+     * @param device 设备信息
+     * @return
+     */
+    public String getScreenShot(IDevice device) {
+        String filepath= null;
+        RawImage rawScreen =null;
+        if (device!=null){
+        try {
+            rawScreen =device.getScreenshot();
+            System.out.println(device.getScreenshot());
+        } catch (TimeoutException e) {
+            e.printStackTrace();
+        } catch (AdbCommandRejectedException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (rawScreen!=null){
+            BufferedImage image = null;
+            Boolean landscape = false;
+            int width2 = landscape ? rawScreen.height : rawScreen.width;
+            int height2 = landscape ? rawScreen.width : rawScreen.height;
+            if (image == null) {
+                image = new BufferedImage(width2, height2,
+                        BufferedImage.TYPE_INT_RGB);
+            } else {
+                if (image.getHeight() != height2 || image.getWidth() != width2) {
+                    image = new BufferedImage(width2, height2,
+                            BufferedImage.TYPE_INT_RGB);
+                }
+            }
+            int index = 0;
+            int indexInc = rawScreen.bpp >> 3;
+            for (int y = 0; y < rawScreen.height; y++) {
+                for (int x = 0; x < rawScreen.width; x++, index += indexInc) {
+                    int value = rawScreen.getARGB(index);
+                    if (landscape)
+                        image.setRGB(y, rawScreen.width - x - 1, value);
+                    else
+                        image.setRGB(x, y, value);
+                }
+            }
+            try {
+                filepath="E:\\idaeWorkSpace\\IDEworkspace\\AutoTestPc\\src\\main\\resources\\screenshot\\"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+".jpg";
+                ImageIO.write((RenderedImage) image, "PNG", new File(filepath));
+                return filepath;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        }
+        return null;
     }
 
     /**

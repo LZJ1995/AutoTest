@@ -1,6 +1,6 @@
 package com.lzj.autotestpc.servce.impl;
 
-import com.lzj.autotestpc.bean.StartDeviceBean;
+import com.lzj.autotestpc.bean.DeviceInfo;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
@@ -16,7 +16,7 @@ public interface AppiumOperationServiceImp {
      *
      * @return
      */
-    public AndroidDriver<AndroidElement> connectDevice(ArrayList<StartDeviceBean>startDeviceInfos);
+    public AndroidDriver<AndroidElement> connectDevice(ArrayList<DeviceInfo>startDeviceInfos);
 
     /**
      * 根据className定位元素并点击

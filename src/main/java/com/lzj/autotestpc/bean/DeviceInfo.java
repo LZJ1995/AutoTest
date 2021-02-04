@@ -1,13 +1,24 @@
 package com.lzj.autotestpc.bean;
 
-public class StartDeviceBean {
+import com.android.ddmlib.IDevice;
+
+public class DeviceInfo {
 
     private String appPackage;
     private String appActivity;
     private String deviceVersion;
     private String deviceSN;
     private String deviceModel;
-    private String deviceType;
+    private String deviceState;
+    private IDevice device;
+
+    public String getDeviceState() {
+        return deviceState;
+    }
+
+    public void setDeviceState(String deviceState) {
+        this.deviceState = deviceState;
+    }
 
     public String getAppPackage() {
         return appPackage;
@@ -49,11 +60,24 @@ public class StartDeviceBean {
         this.deviceModel = deviceModel;
     }
 
-    public String getDeviceType() {
-        return deviceType;
+    public IDevice getDevice() {
+        return device;
     }
 
-    public void setDeviceType(String deviceType) {
-        this.deviceType = deviceType;
+    public void setDevice(IDevice device) {
+        this.device = device;
+    }
+
+    @Override
+    public String toString() {
+        return "DeviceInfo{" +
+                "appPackage='" + appPackage + '\'' +
+                ", appActivity='" + appActivity + '\'' +
+                ", deviceVersion='" + deviceVersion + '\'' +
+                ", deviceSN='" + deviceSN + '\'' +
+                ", deviceModel='" + deviceModel + '\'' +
+                ", deviceState='" + deviceState + '\'' +
+                ", device=" + device +
+                '}';
     }
 }

@@ -1,7 +1,7 @@
 package com.lzj.autotestpc.servce;
 
 import com.lzj.autotestpc.base.AppiumElementBase;
-import com.lzj.autotestpc.bean.StartDeviceBean;
+import com.lzj.autotestpc.bean.DeviceInfo;
 import com.lzj.autotestpc.servce.impl.AppiumOperationServiceImp;
 import com.lzj.autotestpc.tool.AppiumTool;
 import io.appium.java_client.android.AndroidDriver;
@@ -27,11 +27,11 @@ public class AppiumOperationService implements AppiumOperationServiceImp {
         }
     }
    @Override
-    public AndroidDriver<AndroidElement> connectDevice(ArrayList<StartDeviceBean> startDeviceInfos) {
+    public AndroidDriver<AndroidElement> connectDevice(ArrayList<DeviceInfo> startDeviceInfos) {
        AndroidDriver<AndroidElement> driver=null;
        if (startDeviceInfos!=null&&startDeviceInfos.size()>0){
            for (int i=0;i<startDeviceInfos.size();i++){
-               StartDeviceBean bean=startDeviceInfos.get(i);
+               DeviceInfo bean=startDeviceInfos.get(i);
 //               driver=tool.connectDevice(bean.getDeviceSN(),"Android",bean.getDeviceVersion(),bean.getAppPackage(),bean.getAppActivity());
                try {
                    tool.connectDevice();

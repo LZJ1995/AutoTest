@@ -27,6 +27,6 @@ public class PageConstant {
     public static final String HLEAP = "帮助";
     public static final String HLEAP_EXPLAIN = "产品使用说明";
     public static final String HLEAP_ABOUT = "关于";
-    public static final String EDITOR_CREATE = "添加脚本";
+    public static final String EDITOR_CREATE = "删除脚本";
     public static final String EDITOR_ASSERT = "添加文字断言";
 }

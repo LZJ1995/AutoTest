@@ -1,7 +1,7 @@
 package com.lzj.autotestpc.controller;
 
 import com.lzj.autotestpc.base.AutoTestContext;
-import com.lzj.autotestpc.bean.StartDeviceBean;
+import com.lzj.autotestpc.bean.DeviceInfo;
 import com.lzj.autotestpc.servce.ScriptService;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -23,7 +23,7 @@ public class StartWriteScriptDialogController implements Initializable {
     @FXML
     private Label startActvityShow;
     private ArrayList<String> packgeData;
-    private StartDeviceBean bean;
+    private DeviceInfo bean;
     private boolean isStratScript=false;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -53,7 +53,7 @@ public class StartWriteScriptDialogController implements Initializable {
      */
     public void showPackge(boolean isAll) throws IOException {
         sciptServicer = new ScriptService();
-        bean=new StartDeviceBean();
+        bean=new DeviceInfo();
         if (isAll) {
             packgeData = sciptServicer.getAllPackges();
         } else {
@@ -75,7 +75,7 @@ public class StartWriteScriptDialogController implements Initializable {
         }
     }
 
-    public StartDeviceBean getBean() {
+    public DeviceInfo getBean() {
         return bean;
     }
     public boolean getIsStratScript() {
